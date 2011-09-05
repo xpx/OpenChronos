@@ -238,8 +238,14 @@ void init_application(void)
     // changed is n x 32 x 32 x f_MCLK / f_FLL_reference. See UCS chapter in 5xx
     // UG for optimization.
     // 32 x 32 x 8 MHz / 32,768 Hz = 250000 = MCLK cycles for DCO to settle
-    __delay_cycles(250000);
+    // msp430-gcc 4.5.3 does not support delays larger than 2^16-1 so split loop
+    // __delay_cycles(250000);
+    __delay_cycles(62500);
+    __delay_cycles(62500);
+    __delay_cycles(62500);
+    __delay_cycles(62500);
   
+
 	// Loop until XT1 & DCO stabilizes, use do-while to insure that 
 	// body is executed at least once
 	do
