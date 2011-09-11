@@ -28,6 +28,7 @@
 
 // *************************************************************************************************
 // Include section
+#include <stdint.h>
 #include "project.h"
 
 #include "bsp.h"
@@ -39,7 +40,6 @@
 #include "simpliciti.h"
 #include "driver/display.h"
 #include "rfsimpliciti.h"
-
 
 // *************************************************************************************************
 // Defines section
